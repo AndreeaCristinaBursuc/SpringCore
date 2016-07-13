@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
+import javax.annotation.PostConstruct;
 import java.util.Scanner;
 
 @Controller
@@ -31,7 +32,12 @@ public class UserController {
 		System.out.println("Dati un id!");
 		String answ=sc.nextLine();
 		User u=user_srv.get(Integer.parseInt(answ));
-		u.getFirstName();
+		//u.getFirstName();
 
+	}
+
+	@PostConstruct
+	public void firstMethod(){
+		System.out.println("S-a apelat PostConstruct mai intai !");
 	}
 }
